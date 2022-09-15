@@ -96,8 +96,8 @@ dateELE.addEventListener("change", () => {
   age = getAge(Today, dob);
 
   dateELE.style.border = "2px solid rgba(0, 0, 0, 0.4)";
-  if (age < 18 || age > 55) {
-    dateELE.setCustomValidity("Your age is not lies between 18 and 55");
+  if (age < 18 && age > 55) {
+    dateELE.setCustomValidity("Your age should lie between 18 and 55");
     dateELE.style.border = "2px solid red";
     return;
   } else {
@@ -111,7 +111,7 @@ email.addEventListener("input", () => validate(email));
 
 function validate(ele) {
   if (ele.validity.typeMismatch) {
-    ele.setCustomValidity("The Email is not in the right format!!!");
+    ele.setCustomValidity("The Email is not in  right format please reenter.");
     ele.reportValidity();
   } else {
     ele.setCustomValidity("");
